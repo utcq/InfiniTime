@@ -12,6 +12,20 @@ on:
     paths-ignore:
       - 'doc/**'
       - '**.md'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+          - development
+      version:
+        description: 'Version to deploy'
+        required: false
 
 jobs:
   build-firmware:
