@@ -42,8 +42,9 @@ N8Puzzle::N8Puzzle(Controllers::MotionController& motionController,
                       static_cast<uint32_t>(motionController.Z())};
   gen.seed(sseq);
   this->GeneratePuzzle();
-  refreshTask = lv_task_create(RefreshTaskCallback, LV_DISP_DEF_REFR_PERIOD, LV_TASK_PRIO_MID, this);
+  this->DrawGrid();
   this->Update();
+  refreshTask = lv_task_create(RefreshTaskCallback, LV_DISP_DEF_REFR_PERIOD, LV_TASK_PRIO_MID, this);
 }
 
 int N8Puzzle::countInversions(uint8_t tiles[9]) {
@@ -62,13 +63,11 @@ void N8Puzzle::GeneratePuzzle() {
   uint8_t tiles[9] = {1, 2, 3, 4, 5, 6, 7, 8, 0};
   do {
     std::shuffle(std::begin(tiles), std::end(tiles), gen);
-  } while (countInversions(tiles) % 2 == 0);
+  } while (countInversions(tiles) % 2 != 0);
   for (int i = 0; i < 9; i++) {
     puzzle[i / 3][i % 3] = tiles[i];
   }
 }
-
-
 
 N8Puzzle::~N8Puzzle() {
   lv_task_del(refreshTask);
@@ -76,32 +75,43 @@ N8Puzzle::~N8Puzzle() {
 }
 
 void N8Puzzle::DrawGrid() {
-  // Draw a 3x3 grid
-  for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < 3; j++) {
-      if (puzzle[i][j] == 0) {
-        continue;
-      }
-      lv_obj_t* btn = lv_btn_create(lv_scr_act(), nullptr);
-      lv_obj_set_style_local_bg_color(btn, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_MAKE(86,96,81));
-      lv_obj_set_size(btn, 72, 72);
-      lv_obj_align(btn, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5 + (i * 78), 5 + (j * 78));
-      MakeLabel(&jetbrains_mono_bold_20,
-                                  LV_COLOR_WHITE,
-                                  LV_LABEL_LONG_EXPAND,
-                                  0,
-                                  LV_LABEL_ALIGN_CENTER,
-                                  std::to_string(puzzle[i][j]).c_str(),
-                                  btn,
-                                  LV_ALIGN_CENTER,
-                                  0,
-                                  0);
+
+  gridDisplay = lv_table_create(lv_scr_act(), nullptr);
+
+  lv_style_init(&cellStyle);
+
+  lv_style_set_border_color(&cellStyle, LV_STATE_DEFAULT, lv_color_hex(0x708090)); // border
+  lv_style_set_border_width(&cellStyle, LV_STATE_DEFAULT, 4);
+  lv_style_set_bg_opa(&cellStyle, LV_STATE_DEFAULT, LV_OPA_COVER);
+  lv_style_set_bg_color(&cellStyle, LV_STATE_DEFAULT, lv_color_hex(0x2F4F4F)); // bg
+  lv_style_set_pad_top(&cellStyle, LV_STATE_DEFAULT, 55);
+  lv_style_set_text_color(&cellStyle, LV_STATE_DEFAULT, lv_color_hex(0xFFFFFF)); // text
+
+  lv_obj_add_style(gridDisplay, LV_TABLE_PART_CELL1, &cellStyle);
+
+  lv_table_set_col_cnt(gridDisplay, 3);
+  lv_table_set_row_cnt(gridDisplay, 3);
+  for (int col = 0; col < 3; col++) {
+    static constexpr int colWidth = LV_HOR_RES_MAX / 3;
+    lv_table_set_col_width(gridDisplay, col, colWidth);
+    for (int row = 0; row < 3; row++) {
+      lv_table_set_cell_type(gridDisplay, row, col, 1);
+      lv_table_set_cell_align(gridDisplay, row, col, LV_LABEL_ALIGN_CENTER);
     }
   }
 }
 
+void N8Puzzle::UpdateGrid() {
+  for (int i = 0; i < 9; i++) {
+    if (puzzle[i / 3][i % 3] == 0) {
+      lv_table_set_cell_value(gridDisplay, i / 3, i % 3, "");
+      continue;
+    }
+    lv_table_set_cell_value(gridDisplay, i / 3, i % 3, std::to_string(puzzle[i / 3][i % 3]).c_str());
+  }
+}
 void N8Puzzle::CheckWin() {
-  uint8_t solved[9] = {1, 4, 7, 2, 5, 8, 3, 6, 0};
+  uint8_t solved[9] = {1, 2, 3, 4, 5, 6, 7, 8};
   for (int i = 0; i < 9; i++) {
     if (puzzle[i / 3][i % 3] != solved[i]) {
       return;
@@ -121,8 +131,7 @@ void N8Puzzle::CheckWin() {
 }
 
 void N8Puzzle::Update() {
-  lv_obj_clean(lv_scr_act());
-  this->DrawGrid();
+  this->UpdateGrid();
   this->CheckWin();
 }
 
@@ -177,19 +186,19 @@ bool N8Puzzle::OnTouchEvent(Pinetime::Applications::TouchEvents event) {
     }
   }
   switch (event) {
-    case TouchEvents::SwipeLeft: {
+    case TouchEvents::SwipeUp: {
       this->SwipeUp(emptyIndex);
       return true;
     }
-    case TouchEvents::SwipeRight: {
+    case TouchEvents::SwipeDown: {
       this->SwipeDown(emptyIndex);
       return true;
     }
-    case TouchEvents::SwipeUp: {
+    case TouchEvents::SwipeLeft: {
       this->SwipeLeft(emptyIndex);
       return true;
     }
-    case TouchEvents::SwipeDown: {
+    case TouchEvents::SwipeRight: {
       this->SwipeRight(emptyIndex);
       return true;
     }

@@ -35,6 +35,7 @@ namespace Pinetime {
         int countInversions(uint8_t tiles[9]);
         void Update();
         void DrawGrid();
+        void UpdateGrid();
         void CheckWin();
 
         void SwipeLeft(uint8_t emptyIndex);
@@ -45,7 +46,9 @@ namespace Pinetime {
         bool running = true;
 
         lv_task_t* refreshTask;
-      };
+        lv_obj_t *gridDisplay;
+        lv_style_t cellStyle;
+        };
     }
     template <>
     struct AppTraits<Apps::N8Puzzle> {
