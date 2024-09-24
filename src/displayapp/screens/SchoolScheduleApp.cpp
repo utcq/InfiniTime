@@ -1,9 +1,9 @@
 #include "displayapp/screens/SchoolScheduleApp.h"
+#include <lvgl/lvgl.h>
+#include "displayapp/DisplayApp.h"
 #include "displayapp/screens/Screen.h"
-#include "displayapp/screens/Symbols.h"
 #include "components/settings/Settings.h"
-#include "components/motor/MotorController.h"
-#include "components/motion/MotionController.h"
+#include "displayapp/screens/ScreenList.h"
 
 using namespace Pinetime::Applications::Screens;
 
@@ -30,114 +30,42 @@ namespace {
     lv_obj_align(label, reference, alignment, x, y);
     return label;
   }
-
-  void MakeThickLine(lv_obj_t* parent, lv_coord_t y, lv_color_t color, uint16_t thickness) {
-    static lv_point_t line_points[] = {{0, 0}, {240, 0}};
-    lv_obj_t* line = lv_line_create(parent, NULL);
-    lv_line_set_points(line, line_points, 2);
-    static lv_style_t style;
-    lv_style_init(&style);
-    lv_style_set_line_color(&style, LV_STATE_DEFAULT, color);
-    lv_style_set_line_width(&style, LV_STATE_DEFAULT, thickness);
-    lv_obj_add_style(line, LV_LINE_PART_MAIN, &style);
-    lv_obj_align(line, parent, LV_ALIGN_IN_TOP_MID, 0, y);
 }
 
+DaySchedule::DaySchedule(int day): day(day) {
+}
 
-  void dayClickEventHandler(lv_obj_t *obj, lv_event_t event) {
-    if (event != LV_EVENT_CLICKED) {return;}
-    auto* screen = static_cast<SchoolSchedule*>(obj->user_data);
-    int day_index = 0;
-    for (int i=0;i<screen->numBtns;i++) {
-      if (screen->btnsnlabels[i]->first == obj) {
-        day_index = i;
-        break;
-      }
-    }
-    screen->dayScreen = lv_obj_create(NULL, NULL);
-    lv_scr_load(screen->dayScreen);
-    MakeLabel(&jetbrains_mono_bold_20,
-                LV_COLOR_GREEN,
-                LV_LABEL_LONG_EXPAND,
-                0,
-                LV_LABEL_ALIGN_CENTER,
-                screen->days[day_index],
-                screen->dayScreen,
-                LV_ALIGN_IN_TOP_MID,
-                0,
-                10);
-    for (int i=0;i<screen->numLessons;i++) {
-      if ((i==0) | (i>0 && screen->schoolSchedule[day_index][i-1]!=nullptr)) {
-        MakeThickLine(screen->dayScreen, (120+((i*30)-75)), LV_COLOR_GRAY, 2);
-      }
-      if (screen->schoolSchedule[day_index][i]!=nullptr) {
-        MakeLabel(&jetbrains_mono_bold_20,
-                  LV_COLOR_TEAL,
-                  LV_LABEL_LONG_EXPAND,
-                  0,
-                  LV_LABEL_ALIGN_LEFT,
-                  screen->schoolSchedule[day_index][i],
-                  screen->dayScreen,
-                  LV_ALIGN_IN_LEFT_MID,
-                  5,
-                  (i*30)-60);
-      } else if (i == (screen->numLessons-1)) {
-        continue;
-      }
-      if (i == (screen->numLessons-1)) {
-        MakeThickLine(screen->dayScreen, (120+((i*30)-45)), LV_COLOR_GRAY, 2);
-      }
-    }
+DaySchedule::~DaySchedule() {
+  lv_obj_clean(lv_scr_act());
+}
+
+auto SchoolSchedule::CreateScreenList() const {
+  std::array<std::function<std::unique_ptr<Screen>()>, nScreens> screens;
+  for (size_t i = 0; i < screens.size(); i++) {
+    screens[i] = [this, i]() -> std::unique_ptr<Screen> {
+      return CreateScreen(i);
+    };
   }
+  return screens;
 }
 
-void SchoolSchedule::CreateButtons() {
-  for (int i=0;i<this->numBtns;i++) {
-    lv_obj_t *btn = lv_btn_create(lv_scr_act(), nullptr);
-    btn->user_data = this;
-    lv_obj_set_size(btn, 110, 50);
-    lv_obj_set_style_local_bg_color(btn, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_ORANGE);
-    unsigned x = ((i%2)*120)+5;
-    unsigned y = ((i/2)*60)+35 ;
-    lv_obj_align(btn, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, x, y);
-    lv_obj_set_event_cb(btn, dayClickEventHandler);
-    lv_obj_t *label = MakeLabel(&jetbrains_mono_bold_20,
-                           LV_COLOR_WHITE,
-                           LV_LABEL_LONG_EXPAND,
-                           0,
-                           LV_LABEL_ALIGN_CENTER,
-                           days[i],
-                           btn,
-                           LV_ALIGN_CENTER,
-                           0,
-                           0);
-    btnsnlabels[i] = new std::pair<lv_obj_t*, lv_obj_t*>(
-      btn,
-      label
-    );
-  }
-}
-
-SchoolSchedule::SchoolSchedule(Controllers::MotionController& motionController,
-           Controllers::MotorController& motorController,
-           Controllers::Settings& settingsController)
-  : motorController {motorController}, motionController {motionController}, settingsController {settingsController} {
-  std::seed_seq sseq {static_cast<uint32_t>(xTaskGetTickCount()),
-                      static_cast<uint32_t>(motionController.X()),
-                      static_cast<uint32_t>(motionController.Y()),
-                      static_cast<uint32_t>(motionController.Z())};
-  this->CreateButtons();
-
-  refreshTask = lv_task_create(RefreshTaskCallback, LV_DISP_DEF_REFR_PERIOD, LV_TASK_PRIO_MID, this);
+SchoolSchedule::SchoolSchedule(DisplayApp *app)
+  : app {app},
+  screens {app, 0, CreateScreenList(), Screens::ScreenListModes::UpDown} {
 }
 
 SchoolSchedule::~SchoolSchedule() {
-  lv_task_del(refreshTask);
   lv_obj_clean(lv_scr_act());
-  if (dayScreen != nullptr) {
-    lv_obj_clean(dayScreen);
-  }
 }
 
-void SchoolSchedule::Refresh() {
+bool SchoolSchedule::OnTouchEvent(TouchEvents event) {
+  return screens.OnTouchEvent(event);
+}
+
+std::unique_ptr<Screen> SchoolSchedule::CreateScreen(unsigned int screenNum) const {
+  std::array<Screens::Screen, daysPerScreen> screens;
+  for (int i = 0; i < daysPerScreen; i++) {
+    int day_index = screenNum * daysPerScreen + i;
+    screens[i] = DaySchedule(day_index);
+  }
 }

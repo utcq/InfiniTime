@@ -4,45 +4,52 @@
 #include "displayapp/screens/Screen.h"
 #include "displayapp/widgets/Counter.h"
 #include "displayapp/Controllers.h"
+#include "displayapp/screens/ScreenList.h"
 #include "Symbols.h"
 
 #include <array>
 #include <random>
 
+static constexpr int nDays = 5;
+static constexpr int nLessons = 6;
+
 namespace Pinetime {
   namespace Applications {
     namespace Screens {
+      class DaySchedule : public Screen {
+      public:
+        DaySchedule(int day);
+        ~DaySchedule() override;
+        bool OnTouchEvent(TouchEvents event) override;
+      
+      private:
+        int day;
+      };
       class SchoolSchedule : public Screen {
       public:
-        SchoolSchedule(Controllers::MotionController& motionController,
-             Controllers::MotorController& motorController,
-             Controllers::Settings& settingsController);
-        ~SchoolSchedule() override;
-        void Refresh() override;
-
-      public:
-        constexpr static uint8_t numBtns = 6;
-        const char *days[numBtns] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-        std::pair<lv_obj_t*, lv_obj_t*> *btnsnlabels[numBtns];
-        lv_task_t* refreshTask;
-
-        constexpr static uint8_t numLessons = 6;
-        const char* schoolSchedule[numBtns][numLessons] = {
-          {"Italiano", "Religion", "Storia", "Matematica", "Inglese", nullptr},
-          {"Chimica", "Informatica", "Italiano", "Matematica", "Disegno", nullptr},
-          {"Storia", "Biologia", "Inglese", "Fisica", "PE", nullptr},
-          {"Matematica", "Chimica", "Italiano", "Storia", "Fisica", nullptr},
-          {"Biologia", "St. Arte", "Inglese", "Matematica", "Informatica", nullptr},
-          {nullptr, nullptr, nullptr, nullptr, nullptr, nullptr}
+        struct Item {
+          const char *name;
+          const char *lessons[nLessons];
         };
-        lv_obj_t* dayScreen = nullptr;
+
+        SchoolSchedule(DisplayApp *app);
+        ~SchoolSchedule() override;
+        bool OnTouchEvent(TouchEvents event) override;
+      
       private:
+        DisplayApp *app;
+        auto CreateScreenList() const;
+        std::unique_ptr<Screen> CreateScreen(
+          unsigned screenNum
+        ) const;
 
-        Controllers::MotorController& motorController;
-        Controllers::MotionController& motionController;
-        Controllers::Settings& settingsController;
+        static constexpr int daysPerScreen = 4;
+        std::array<Item, nDays> daysItems;
+        static constexpr int nScreens = (
+          (nDays-1)/daysPerScreen+1
+        );
 
-        void CreateButtons();
+        ScreenList<nScreens> screens;
       };
     }
 
@@ -52,7 +59,7 @@ namespace Pinetime {
       static constexpr const char* icon = Screens::Symbols::list;
 
       static Screens::Screen* Create(AppControllers& controllers) {
-        return new Screens::SchoolSchedule(controllers.motionController, controllers.motorController, controllers.settingsController);
+        return new Screens::SchoolSchedule(controllers.displayApp);
       };
     };
   }
