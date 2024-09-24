@@ -79,6 +79,7 @@ namespace Pinetime {
       void Register(Pinetime::Controllers::SimpleWeatherService* weatherService);
       void Register(Pinetime::Controllers::MusicService* musicService);
       void Register(Pinetime::Controllers::NavigationService* NavigationService);
+      void PushScreen(std::unique_ptr<Screens::Screen> screen);
 
     private:
       Pinetime::Drivers::St7789& lcd;

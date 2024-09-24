@@ -8,40 +8,33 @@
 
 #include <array>
 #include <random>
+#include <memory>
+
+constexpr static uint8_t numDays = 6;
+constexpr static uint8_t numLessons = 6;
 
 namespace Pinetime {
   namespace Applications {
     namespace Screens {
+      class DayScreen : public Screen {
+        public:
+          DayScreen(int day);
+          ~DayScreen() override;
+      };
+
+
       class SchoolSchedule : public Screen {
       public:
-        SchoolSchedule(Controllers::MotionController& motionController,
-             Controllers::MotorController& motorController,
-             Controllers::Settings& settingsController);
+        SchoolSchedule();
         ~SchoolSchedule() override;
         void Refresh() override;
 
       public:
-        constexpr static uint8_t numBtns = 6;
-        const char *days[numBtns] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-        std::pair<lv_obj_t*, lv_obj_t*> *btnsnlabels[numBtns];
+        std::pair<lv_obj_t*, lv_obj_t*> *btnsnlabels[numDays];
         lv_task_t* refreshTask;
 
-        constexpr static uint8_t numLessons = 6;
-        const char* schoolSchedule[numBtns][numLessons] = {
-          {"Italiano", "Religion", "Storia", "Matematica", "Inglese", nullptr},
-          {"Chimica", "Informatica", "Italiano", "Matematica", "Disegno", nullptr},
-          {"Storia", "Biologia", "Inglese", "Fisica", "PE", nullptr},
-          {"Matematica", "Chimica", "Italiano", "Storia", "Fisica", nullptr},
-          {"Biologia", "St. Arte", "Inglese", "Matematica", "Informatica", nullptr},
-          {nullptr, nullptr, nullptr, nullptr, nullptr, nullptr}
-        };
-        lv_obj_t* dayScreen = nullptr;
+        std::unique_ptr<Screen> dayScreen;
       private:
-
-        Controllers::MotorController& motorController;
-        Controllers::MotionController& motionController;
-        Controllers::Settings& settingsController;
-
         void CreateButtons();
       };
     }
@@ -52,7 +45,7 @@ namespace Pinetime {
       static constexpr const char* icon = Screens::Symbols::list;
 
       static Screens::Screen* Create(AppControllers& controllers) {
-        return new Screens::SchoolSchedule(controllers.motionController, controllers.motorController, controllers.settingsController);
+        return new Screens::SchoolSchedule();
       };
     };
   }
