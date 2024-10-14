@@ -8,21 +8,8 @@
 static Topic* topics;
 
 using namespace Pinetime::Applications::Screens;
-namespace {
-  void topic_btn_handler(lv_obj_t *obj, lv_event_t event) {
-    if (event == LV_EVENT_CLICKED) {
-      for (unsigned i = 0; i < 7; i++) {
-        if (topics[i].btn == obj) {
-          lv_obj_clean(lv_scr_act());
-          lv_scr_load_anim(topics[i].page, LV_SCR_LOAD_ANIM_FADE_ON, 300, 0, false);
-          break;
-        }
-      }
-    }
-  }
-}
 
-lv_obj_t *Cheat::create_page(const char *text) {
+lv_obj_t *create_page(const char *text) {
   lv_obj_t *page = lv_obj_create(nullptr, nullptr);
   lv_obj_t *ta = lv_textarea_create(page, nullptr);
   lv_textarea_set_one_line(ta, false);
@@ -35,15 +22,31 @@ lv_obj_t *Cheat::create_page(const char *text) {
   return page;
 }
 
+void topic_btn_handler(lv_obj_t *obj, lv_event_t event) {
+  if (event == LV_EVENT_CLICKED) {
+    for (unsigned i = 0; i < 7; i++) {
+      if (topics[i].btn == obj) {
+        if (!topics[i].pageCreated) {
+          topics[i].page = create_page(topics[i].content);
+          topics[i].pageCreated = true;
+        }
+        lv_obj_clean(lv_scr_act());
+        lv_scr_load_anim(topics[i].page, LV_SCR_LOAD_ANIM_FADE_ON, 300, 0, false);
+        break;
+      }
+    }
+  }
+}
+
 Cheat::Cheat() {
   topics = new Topic[7] {
-    {"Volume", VOLUME},
-    {"Temperatura", TEMPERATURA},
-    {"Pressione", PRESSIONE},
-    {"Densita'", DENSITA},
-    {"Decantazione", DECANTAZIONE},
-    {"Filtrazione", FILTRAZIONE},
-    {"Evaporazione", EVAPORAZIONE}
+    {"Volume", VOLUME, nullptr, nullptr, false},
+    {"Temperatura", TEMPERATURA, nullptr, nullptr, false},
+    {"Pressione", PRESSIONE, nullptr, nullptr, false},
+    {"Densita'", DENSITA, nullptr, nullptr, false},
+    {"Decantazione", DECANTAZIONE, nullptr, nullptr, false},
+    {"Filtrazione", FILTRAZIONE, nullptr, nullptr, false},
+    {"Evaporazione", EVAPORAZIONE, nullptr, nullptr, false}
   };
 
   btnList = lv_list_create(lv_scr_act(), nullptr);
@@ -54,7 +57,6 @@ Cheat::Cheat() {
   lv_obj_t *list_btn;
   for (unsigned i = 0; i < 7; i++) {
     Topic *topic = &topics[i];
-    topic->page = create_page(topic->content);
     list_btn = lv_list_add_btn(btnList, nullptr, topic->name);
     lv_obj_set_style_local_bg_color(list_btn, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_ORANGE);
     lv_obj_set_style_local_radius(list_btn, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, 10);
@@ -72,7 +74,9 @@ Cheat::~Cheat() {
   lv_task_del(refreshTask);
   lv_obj_clean(lv_scr_act());
   for (unsigned i = 0; i < 7; i++) {
-    if (topics[i].page) lv_obj_clean(topics[i].page);
+    if (topics[i].pageCreated && topics[i].page) {
+      lv_obj_clean(topics[i].page);
+    }
   }
   delete[] topics;
 }

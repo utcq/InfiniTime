@@ -11,9 +11,10 @@
 
 struct Topic {
   const char* name;
-  const char *content;
-  lv_obj_t *page = nullptr;
-  lv_obj_t *btn = nullptr;
+  const char* content;
+  lv_obj_t* page;
+  lv_obj_t* btn;
+  bool pageCreated;
 };
 
 static const char* VOLUME = R"(
