@@ -4,10 +4,9 @@
 
 #include "displayapp/screens/Alarm.h"
 #include "displayapp/screens/Dice.h"
+#include "displayapp/screens/Cheat.h"
 #include "displayapp/screens/Timer.h"
 #include "displayapp/screens/Twos.h"
-#include "displayapp/screens/N8PuzzleApp.h"
-#include "displayapp/screens/SchoolScheduleApp.h"
 #include "displayapp/screens/Tile.h"
 #include "displayapp/screens/ApplicationList.h"
 #include "displayapp/screens/WatchFaceDigital.h"
