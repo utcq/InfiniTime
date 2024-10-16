@@ -2,24 +2,24 @@ Quadrilatero:
   poligono: 4 lati e 4 angoli
 Parallelogramma:
   Quadrilatero con lati opposti paralleli
-  Proprietà:
+  Proprieta':
     - Lati opposti congruenti
     - Angoli opposti congruenti
-    - Diagonali si tagliano a metà
+    - Diagonali si tagliano a meta'
     - Due lati paralleli e congruenti sono sufficienti
   
   Teoremi:
     - Lati opposti congruenti
     - Angoli opposti congruenti
-    - Diagonali si tagliano a metà formano triangoli congruenti
+    - Diagonali si tagliano a meta' formano triangoli congruenti
     - Un quadrilatero è parallelogramma se ha lati opposti o angoli congruenti
-PG. Dimostrazione:
+PG. DIM:
   1. Lati opposti congruenti:
     - Traccia AC (diagonale)
     - Triangoli ABC e ADC condividono AC
     - BAC = ACD (angoli alterni interni, rette AB e CD tagliate da AC)
     - BCA = CAD (angoli alterni interni)
-    - Triangoli congruenti → AB = CD, BC = AD
+    - Triangoli congruenti -> AB = CD, BC = AD
   
   2. Angoli opposti congruenti:
     - Traccia AC (diagonale)
@@ -27,40 +27,40 @@ PG. Dimostrazione:
     - BAD = BCD (somme di angoli congruenti)
     - ABC = ADC (triangoli congruenti)
 
-  3. Diagonali si tagliano a metà:
+  3. Diagonali si tagliano a meta':
     - Triangoli AMB e CMD condividono diagonale BD
     - AB = CD (lati opposti congruenti)
     - BAM = CMD (angoli alterni interni)
-    - Triangoli congruenti → AM = MC, BM = MD
+    - Triangoli congruenti -> AM = MC, BM = MD
 Rettangolo:
   Quadrilatero con tutti gli angoli retti
   
-  Proprietà:
-    - Angoli opposti congruenti (perché retti)
+  Proprieta':
+    - Angoli opposti congruenti (perche' retti)
     - Lati opposti paralleli e congruenti
-    - Le diagonali si tagliano a metà
+    - Le diagonali si tagliano a meta'
     - Le diagonali sono congruenti
   
   Teorema:
     - In un rettangolo le diagonali sono congruenti: AC = BD
     - Un parallelogramma con un angolo retto è un rettangolo
     - Se le diagonali di un parallelogramma sono congruenti, è un rettangolo
-RT. Dimostrazione (Diagonali congruenti):
+RT. DIM (DIAG):
   - Triangoli DAB e ADC hanno:
     - AB = DC (lati opposti congruenti)
     - AD in comune
     - DAB = ADC (angoli retti)
   - I triangoli sono congruenti per il primo criterio
   - Quindi AC = BD (diagonali congruenti)
-RT. Dimostrazione (Un angolo retto):
+RT. DIM (RETTO):
   - In un parallelogramma, gli angoli adiacenti a un lato sono supplementari
-  - DAB + ADC = 180° (supplementari)
-  - Poiché DAB = ADC (congruenti), allora sono angoli retti
+  - DAB + ADC = 180 (supplementari)
+  - Poiche' DAB = ADC (congruenti), allora sono angoli retti
   - Il parallelogramma ha tutti gli angoli retti, quindi è un rettangolo
 Trapezio:
   Quadrilatero con solo due lati paralleli (basi)
   
-  Proprietà:
+  Proprieta':
     - Base maggiore: lato parallelo più lungo
     - Base minore: lato parallelo più corto
     - Lati obliqui: non paralleli
@@ -74,26 +74,26 @@ Trapezio:
     - Ha i lati obliqui congruenti
   Trapezio Rettangolo:
     - Ha uno dei lati obliqui perpendicolare alle basi
-TR. Dimostrazione (Angoli congruenti):
+TR. DIM (ANG):
   - Tracciamo le altezze BE e CF
   - I triangoli rettangoli ABE e FCD hanno:
     - AB = CD (lati obliqui congruenti per ipotesi)
     - BE = CF (lati opposti del rettangolo EBCF)
   - I triangoli sono congruenti per il criterio ipotenusa-cateto
-  - Quindi α = δ, β = γ (angoli adiacenti alle basi congruenti)
-TR. Dimostrazione (Diagonali congruenti):
+  - Quindi alpha = delta, beta = gamma (angoli adiacenti alle basi congruenti)
+TR. DIM (DIAG):
   - I triangoli ABC e BCD hanno:
     - BC in comune
     - AB = CD (lati obliqui congruenti per ipotesi)
     - ABC = BCD (angoli adiacenti alla stessa base congruenti)
   - I triangoli sono congruenti per il primo criterio
   - Quindi BD = AC (diagonali congruenti)
-Teorema inverso (Trapezio isoscele):
+TEO. INV (ISO):
   - Se in un trapezio gli angoli adiacenti a una base sono congruenti, allora il trapezio è isoscele
-TR. Dimostrazione (Teorema inverso):
+TR. DIM (INV):
   - Tracciamo le altezze BE e CF
   - I triangoli rettangoli ABE e FCD hanno:
-    - α = δ (angoli adiacenti alla base congruenti per ipotesi)
+    - alpha = delta (angoli adiacenti alla base congruenti per ipotesi)
     - BE = CF (lati opposti del rettangolo EBCF)
   - I triangoli sono congruenti per un angolo acuto e un cateto congruenti
   - Quindi AB = CD (trapezio isoscele)

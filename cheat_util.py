@@ -10,20 +10,21 @@ def parse():
   topics = {}
   curr_topic = ""
   for line in ft.splitlines():
-    if line.endswith(":"):
+    if line.startswith("  "):
+      topics[curr_topic]["lines"].append(line[2:])
+    elif line.endswith(":"):
       curr_topic = line[:-1]
       topics[curr_topic] = {
         "lines": [],
         "title": curr_topic,
-        "macro": curr_topic.upper().replace(" ", "_")
+        "macro": curr_topic.upper().replace(" ", "_").replace(".", "").replace("(", "").replace(")", "")
       }
-    elif line.startswith("  "):
-      topics[curr_topic]["lines"].append(line[2:])
   for topic in topics:
-    f.write("#define " + topics[topic]["macro"] + " " + '"' + '\\n'.join(topics[topic]["lines"]) + '"\n')
+    text = '\\n'.join(topics[topic]["lines"])
+    f.write("#define " + topics[topic]["macro"] + " " + '"' + text + '"\n')
   f.write("static Topic *topics;\nconst unsigned pagesNum = " + str(len(topics)) + ";\n")
   f.write("Topic *setup_topics() {\n")
-  f.write("\ttopics = new Topic[2] {\n")
+  f.write("\ttopics = new Topic[" + str(len(topics)) + "] {\n")
   for topic in topics:
     f.write("\t\t{\"" + topics[topic]["title"] + "\", " + topics[topic]["macro"] + "},\n")
   f.write("\t};\n")
