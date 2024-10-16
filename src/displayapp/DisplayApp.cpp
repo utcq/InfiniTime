@@ -633,6 +633,11 @@ void DisplayApp::PushMessage(Messages msg) {
   }
 }
 
+void DisplayApp::PushScreen(std::unique_ptr<Screens::Screen> screen) {
+  currentScreen = std::move(screen);
+  this->Refresh();
+}
+
 void DisplayApp::SetFullRefresh(DisplayApp::FullRefreshDirections direction) {
   switch (direction) {
     case DisplayApp::FullRefreshDirections::Down:
