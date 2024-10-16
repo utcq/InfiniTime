@@ -6,14 +6,16 @@
 #include "components/motion/MotionController.h"
 #include "displayapp/screens/Cheat_text.h"
 
-static bool onMain = true;
-static int active = 0;
+
+extern const unsigned pagesNum;
+bool onMain=true;
+int active=0;
 
 using namespace Pinetime::Applications::Screens;
 
-lv_obj_t* create_page(const char* text) {
-  lv_obj_t* page = lv_obj_create(nullptr, nullptr);
-  lv_obj_t* ta = lv_textarea_create(page, nullptr);
+lv_obj_t *create_page(const char *text) {
+  lv_obj_t *page = lv_obj_create(nullptr, nullptr);
+  lv_obj_t *ta = lv_textarea_create(page, nullptr);
   lv_textarea_set_one_line(ta, false);
   lv_textarea_set_text(ta, text);
   lv_textarea_set_cursor_pos(ta, 0);
@@ -25,17 +27,17 @@ lv_obj_t* create_page(const char* text) {
   return page;
 }
 
-void topic_btn_handler(lv_obj_t* obj, lv_event_t event) {
+void topic_btn_handler(lv_obj_t *obj, lv_event_t event) {
   if (event == LV_EVENT_CLICKED) {
     for (unsigned i = 0; i < pagesNum; i++) {
       if (topics[i].btn == obj) {
         if (!topics[i].pageCreated) {
           topics[i].page = create_page(topics[i].content);
           topics[i].pageCreated = true;
-          active = i;
+          active=i;
         }
         lv_obj_clean(lv_scr_act());
-        onMain = false;
+        onMain=false;
         lv_scr_load_anim(topics[i].page, LV_SCR_LOAD_ANIM_FADE_ON, 300, 0, false);
         break;
       }
@@ -49,9 +51,9 @@ void Cheat::BuildScreen() {
   lv_obj_align(btnList, NULL, LV_ALIGN_CENTER, 0, 0);
   lv_obj_set_style_local_bg_color(btnList, LV_LIST_PART_BG, LV_STATE_DEFAULT, LV_COLOR_BLACK);
 
-  lv_obj_t* list_btn;
+  lv_obj_t *list_btn;
   for (unsigned i = 0; i < pagesNum; i++) {
-    Topic* topic = &topics[i];
+    Topic *topic = &topics[i];
     list_btn = lv_list_add_btn(btnList, nullptr, topic->name);
     lv_obj_set_style_local_bg_color(list_btn, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_ORANGE);
     lv_obj_set_style_local_radius(list_btn, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, 10);
@@ -65,6 +67,8 @@ void Cheat::BuildScreen() {
 }
 
 Cheat::Cheat() {
+  topics = setup_topics();
+  
   this->BuildScreen();
 }
 
@@ -76,6 +80,7 @@ Cheat::~Cheat() {
   }
   lv_obj_clean(lv_scr_act());
   lv_obj_clean(btnList);
+  delete[] topics; topics=nullptr;
 }
 
 bool Cheat::OnButtonPushed() {
