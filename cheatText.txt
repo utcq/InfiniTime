@@ -1,0 +1,11 @@
+Quadrilatero:
+  poligono: 4 lati e 4 angoli
+Parallelogramma:
+  Quadrilatero con lati opposti paralleli
+  diagonale AC, triangoli con AC in comune,
+  BAC=ACD, rette tagliate da AC
+  BCA=CAD, rette tagliate da AC
+  BAD=BCD somme angoli interni
+  ABC=ADC per triangoli congruenti
+  AB=CD lati opposti, ABM=CDM angoli alterni interni
+  BAM=CMD angoli corrispondenti angoli alterni interni 

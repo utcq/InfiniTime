@@ -612,6 +612,7 @@ set(INCLUDE_FILES
         displayapp/screens/Timer.h
         displayapp/screens/Dice.h
         displayapp/screens/Cheat.h
+        displayapp/screens/Cheat_text.h
         displayapp/screens/Alarm.h
         displayapp/Colors.h
         displayapp/widgets/Counter.h

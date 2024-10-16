@@ -4,8 +4,12 @@
 #include "components/settings/Settings.h"
 #include "components/motor/MotorController.h"
 #include "components/motion/MotionController.h"
+#include "displayapp/screens/Cheat_text.h"
 
-static Topic* topics;
+
+extern const unsigned pagesNum;
+bool onMain=true;
+int active=0;
 
 using namespace Pinetime::Applications::Screens;
 
@@ -19,18 +23,21 @@ lv_obj_t *create_page(const char *text) {
   lv_obj_set_style_local_bg_color(ta, LV_PAGE_PART_BG, LV_STATE_DEFAULT, LV_COLOR_BLACK);
   lv_obj_set_style_local_text_color(ta, LV_PAGE_PART_BG, LV_STATE_DEFAULT, LV_COLOR_WHITE);
   lv_obj_set_size(ta, LV_HOR_RES, LV_VER_RES - 10);
+  lv_obj_set_style_local_text_font(ta, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_bold_12);
   return page;
 }
 
 void topic_btn_handler(lv_obj_t *obj, lv_event_t event) {
   if (event == LV_EVENT_CLICKED) {
-    for (unsigned i = 0; i < 7; i++) {
+    for (unsigned i = 0; i < pagesNum; i++) {
       if (topics[i].btn == obj) {
         if (!topics[i].pageCreated) {
           topics[i].page = create_page(topics[i].content);
           topics[i].pageCreated = true;
+          active=i;
         }
         lv_obj_clean(lv_scr_act());
+        onMain=false;
         lv_scr_load_anim(topics[i].page, LV_SCR_LOAD_ANIM_FADE_ON, 300, 0, false);
         break;
       }
@@ -38,24 +45,14 @@ void topic_btn_handler(lv_obj_t *obj, lv_event_t event) {
   }
 }
 
-Cheat::Cheat() {
-  topics = new Topic[7] {
-    {"Volume", VOLUME, nullptr, nullptr, false},
-    {"Temperatura", TEMPERATURA, nullptr, nullptr, false},
-    {"Pressione", PRESSIONE, nullptr, nullptr, false},
-    {"Densita'", DENSITA, nullptr, nullptr, false},
-    {"Decantazione", DECANTAZIONE, nullptr, nullptr, false},
-    {"Filtrazione", FILTRAZIONE, nullptr, nullptr, false},
-    {"Evaporazione", EVAPORAZIONE, nullptr, nullptr, false}
-  };
-
+void Cheat::BuildScreen() {
   btnList = lv_list_create(lv_scr_act(), nullptr);
   lv_obj_set_size(btnList, LV_HOR_RES, LV_VER_RES);
   lv_obj_align(btnList, NULL, LV_ALIGN_CENTER, 0, 0);
   lv_obj_set_style_local_bg_color(btnList, LV_LIST_PART_BG, LV_STATE_DEFAULT, LV_COLOR_BLACK);
 
   lv_obj_t *list_btn;
-  for (unsigned i = 0; i < 7; i++) {
+  for (unsigned i = 0; i < pagesNum; i++) {
     Topic *topic = &topics[i];
     list_btn = lv_list_add_btn(btnList, nullptr, topic->name);
     lv_obj_set_style_local_bg_color(list_btn, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_ORANGE);
@@ -67,18 +64,39 @@ Cheat::Cheat() {
     topic->btn = list_btn;
     lv_obj_set_event_cb(list_btn, topic_btn_handler);
   }
-  refreshTask = lv_task_create(RefreshTaskCallback, LV_DISP_DEF_REFR_PERIOD, LV_TASK_PRIO_MID, this);
+}
+
+Cheat::Cheat() {
+  topics = setup_topics();
+  
+  this->BuildScreen();
 }
 
 Cheat::~Cheat() {
-  lv_task_del(refreshTask);
-  lv_obj_clean(lv_scr_act());
-  for (unsigned i = 0; i < 7; i++) {
+  for (unsigned i = 0; i < pagesNum; i++) {
     if (topics[i].pageCreated && topics[i].page) {
       lv_obj_clean(topics[i].page);
     }
   }
-  delete[] topics;
+  lv_obj_clean(lv_scr_act());
+  lv_obj_clean(btnList);
+  delete[] topics; topics=nullptr;
 }
 
-void Cheat::Refresh() {}
+bool Cheat::OnButtonPushed() {
+  if (!onMain) {
+    lv_obj_clean(lv_scr_act());
+    if (topics != nullptr) {
+      topics[active].pageCreated = false;
+    }
+    onMain = true;
+    BuildScreen();
+    return true;
+  }
+  return false;
+}
+
+bool Cheat::OnTouchEvent(Pinetime::Applications::TouchEvents event) {
+  if (event == TouchEvents::SwipeDown) { return true; }
+  return false;
+}

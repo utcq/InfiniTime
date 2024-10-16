@@ -53,13 +53,13 @@ namespace Pinetime {
       public:
         Cheat();
         ~Cheat() override;
-        void Refresh() override;
+        bool OnButtonPushed() override;
+        bool OnTouchEvent(Pinetime::Applications::TouchEvents event) override;
+
+        void BuildScreen();
 
       private:
-        lv_task_t* refreshTask;
         lv_obj_t *btnList;
-
-        lv_obj_t *create_page(const char *text);
       };
     }
 
