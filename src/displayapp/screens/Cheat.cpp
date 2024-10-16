@@ -21,7 +21,7 @@ lv_obj_t* create_page(const char* text) {
   lv_obj_set_style_local_bg_color(ta, LV_PAGE_PART_BG, LV_STATE_DEFAULT, LV_COLOR_BLACK);
   lv_obj_set_style_local_text_color(ta, LV_PAGE_PART_BG, LV_STATE_DEFAULT, LV_COLOR_WHITE);
   lv_obj_set_size(ta, LV_HOR_RES, LV_VER_RES - 10);
-  lv_obj_set_style_local_text_font(ta, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_bold_12);
+  lv_obj_set_style_local_text_font(ta, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_bold_20);
   return page;
 }
 
