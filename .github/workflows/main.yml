@@ -3,20 +3,12 @@ name: CI
 # Run this workflow whenever the build may be affected
 on:
   push:
-<<<<<<< HEAD
     branches: [main, cheat]
-=======
-    branches: [ main, cheat ]
->>>>>>> ef189c5cbaee96e65a196773e83ec8a30c96da5c
     paths-ignore:
       - "doc/**"
       - "**.md"
   pull_request:
-<<<<<<< HEAD
     branches: [main, cheat]
-=======
-    branches: [ main, cheat ]
->>>>>>> ef189c5cbaee96e65a196773e83ec8a30c96da5c
     paths-ignore:
       - "doc/**"
       - "**.md"
