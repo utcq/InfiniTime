@@ -57,9 +57,8 @@ jobs:
         run: |
           apt-get update
           apt-get -y install --no-install-recommends python3-pil
-      -name: Setup cheats
-        run: |
-          python ./cheat_util.py
+      - name: Cheat Gen
+        run: python ./cheat_util.py
       - name: Build
         shell: bash
         run: /opt/build.sh all
