@@ -5,10 +5,10 @@ Peso:
   P=m*g
 Volume:
   Lo spazio occupato da un corpo
-Capacita':
+Capacita:
   Volume di fluido che un recipiente puo' contenere
-Densita':
-  grandezza fisica di un corpo derivata
+Densita:
+  grandezza fisica di un corpo derivata'
   d=m/V
 Lavoro:
   Spostamento compiuto contro una forza che si oppone
