@@ -1,99 +1,52 @@
-Quadrilatero:
-  poligono: 4 lati e 4 angoli
-Parallelogramma:
-  Quadrilatero con lati opposti paralleli
-  Proprieta':
-    - Lati opposti congruenti
-    - Angoli opposti congruenti
-    - Diagonali si tagliano a meta'
-    - Due lati paralleli e congruenti sono sufficienti
-  
-  Teoremi:
-    - Lati opposti congruenti
-    - Angoli opposti congruenti
-    - Diagonali si tagliano a meta' formano triangoli congruenti
-    - Un quadrilatero è parallelogramma se ha lati opposti o angoli congruenti
-PG. DIM:
-  1. Lati opposti congruenti:
-    - Traccia AC (diagonale)
-    - Triangoli ABC e ADC condividono AC
-    - BAC = ACD (angoli alterni interni, rette AB e CD tagliate da AC)
-    - BCA = CAD (angoli alterni interni)
-    - Triangoli congruenti -> AB = CD, BC = AD
-  
-  2. Angoli opposti congruenti:
-    - Traccia AC (diagonale)
-    - BAC = ACD, BCA = CAD (come sopra)
-    - BAD = BCD (somme di angoli congruenti)
-    - ABC = ADC (triangoli congruenti)
-
-  3. Diagonali si tagliano a meta':
-    - Triangoli AMB e CMD condividono diagonale BD
-    - AB = CD (lati opposti congruenti)
-    - BAM = CMD (angoli alterni interni)
-    - Triangoli congruenti -> AM = MC, BM = MD
-Rettangolo:
-  Quadrilatero con tutti gli angoli retti
-  
-  Proprieta':
-    - Angoli opposti congruenti (perche' retti)
-    - Lati opposti paralleli e congruenti
-    - Le diagonali si tagliano a meta'
-    - Le diagonali sono congruenti
-  
-  Teorema:
-    - In un rettangolo le diagonali sono congruenti: AC = BD
-    - Un parallelogramma con un angolo retto è un rettangolo
-    - Se le diagonali di un parallelogramma sono congruenti, è un rettangolo
-RT. DIM (DIAG):
-  - Triangoli DAB e ADC hanno:
-    - AB = DC (lati opposti congruenti)
-    - AD in comune
-    - DAB = ADC (angoli retti)
-  - I triangoli sono congruenti per il primo criterio
-  - Quindi AC = BD (diagonali congruenti)
-RT. DIM (RETTO):
-  - In un parallelogramma, gli angoli adiacenti a un lato sono supplementari
-  - DAB + ADC = 180 (supplementari)
-  - Poiche' DAB = ADC (congruenti), allora sono angoli retti
-  - Il parallelogramma ha tutti gli angoli retti, quindi è un rettangolo
-Trapezio:
-  Quadrilatero con solo due lati paralleli (basi)
-  
-  Proprieta':
-    - Base maggiore: lato parallelo più lungo
-    - Base minore: lato parallelo più corto
-    - Lati obliqui: non paralleli
-    - Altezza: segmento perpendicolare alle basi
-    - Angoli adiacenti ai lati obliqui sono supplementari (angoli coniugati interni)
-  
-  Teorema (Trapezio isoscele):
-    - In un trapezio isoscele, gli angoli adiacenti a ciascuna base sono congruenti
-    - Le diagonali di un trapezio isoscele sono congruenti
-  Trapezio Isoscele:
-    - Ha i lati obliqui congruenti
-  Trapezio Rettangolo:
-    - Ha uno dei lati obliqui perpendicolare alle basi
-TR. DIM (ANG):
-  - Tracciamo le altezze BE e CF
-  - I triangoli rettangoli ABE e FCD hanno:
-    - AB = CD (lati obliqui congruenti per ipotesi)
-    - BE = CF (lati opposti del rettangolo EBCF)
-  - I triangoli sono congruenti per il criterio ipotenusa-cateto
-  - Quindi alpha = delta, beta = gamma (angoli adiacenti alle basi congruenti)
-TR. DIM (DIAG):
-  - I triangoli ABC e BCD hanno:
-    - BC in comune
-    - AB = CD (lati obliqui congruenti per ipotesi)
-    - ABC = BCD (angoli adiacenti alla stessa base congruenti)
-  - I triangoli sono congruenti per il primo criterio
-  - Quindi BD = AC (diagonali congruenti)
-TEO. INV (ISO):
-  - Se in un trapezio gli angoli adiacenti a una base sono congruenti, allora il trapezio è isoscele
-TR. DIM (INV):
-  - Tracciamo le altezze BE e CF
-  - I triangoli rettangoli ABE e FCD hanno:
-    - alpha = delta (angoli adiacenti alla base congruenti per ipotesi)
-    - BE = CF (lati opposti del rettangolo EBCF)
-  - I triangoli sono congruenti per un angolo acuto e un cateto congruenti
-  - Quindi AB = CD (trapezio isoscele)
+Massa:
+  Caratteristica intrinseca di un corpo
+Peso:
+  La forza con cui la terra attira la massa di un corpo
+  P=m*g
+Volume:
+  Lo spazio occupato da un corpo
+Capacita':
+  Volume di fluido che un recipiente puo' contenere
+Densita':
+  grandezza fisica di un corpo derivata
+  d=m/V
+Lavoro:
+  Spostamento compiuto contro una forza che si oppone
+Energia:
+  Capacita' di compiere un lavoro o trasferire calore
+  1 Joule = 1N*1m
+  - Cinetica = movimento di un corpo
+  - Potenziale = posizione di un corpo in un campo di forza.
+  - Non si esprime per un vincolo
+Calore:
+  Energia trasferita da un corpo caldo ad uno piu' freddo
+  - Caloria = energia per innalzare la temperatura di un 1g di acqua distillata
+Temperatura:
+  Misura di quanto un corpo e' caldo o freddo. Stato termico
+  Celsius = +273 _ K
+Sistemi:
+  Corpo isolato dall'ambiente
+  - Aperto,chiuso,isolato
+  - e+m, e, //
+  fase = parte di sistema delimitata che presenta le stesse caratteristiche fisiche
+  omogeneo = unica fase
+  eterogeneo = due o piu' fasi
+Miscele:
+  - Omogenee = stesse proprietà, fasi non distinguibili. (Soluzioni)
+  - solvente = base, soluto = componente
+  - Eterogenee = 2+ componenti distinguibili con proprietà diverse
+Decantazione:
+  La gravita' causa l'accumularsi del componente con densita' maggiore
+  Lasciando il componente liquido separato
+Filtrazione:
+  Miscela = sospensione
+  componente solido = residuo
+  componente liquido = filtrato
+Centrifugazione:
+  Diversa densita', forza centrifuga, accumularsi >denso
+Cristall:
+  diversa solubilita'.
+  - dissoluzione,filtrazione,evaporazione
+Con Solvente:
+  Separazione due soluti da solvente
+  miscelazione con solvente miscelabile con un solo soluto
