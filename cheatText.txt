@@ -1,52 +1,17 @@
-Massa:
-  Caratteristica intrinseca di un corpo
-Peso:
-  La forza con cui la terra attira la massa di un corpo
-  P=m*g
-Volume:
-  Lo spazio occupato da un corpo
-Capacita:
-  Volume di fluido che un recipiente puo' contenere
-Densita:
-  grandezza fisica di un corpo derivata'
-  d=m/V
-Lavoro:
-  Spostamento compiuto contro una forza che si oppone
-Energia:
-  Capacita' di compiere un lavoro o trasferire calore
-  1 Joule = 1N*1m
-  - Cinetica = movimento di un corpo
-  - Potenziale = posizione di un corpo in un campo di forza.
-  - Non si esprime per un vincolo
-Calore:
-  Energia trasferita da un corpo caldo ad uno piu' freddo
-  - Caloria = energia per innalzare la temperatura di un 1g di acqua distillata
-Temperatura:
-  Misura di quanto un corpo e' caldo o freddo. Stato termico
-  Celsius = +273 _ K
-Sistemi:
-  Corpo isolato dall'ambiente
-  - Aperto,chiuso,isolato
-  - e+m, e, //
-  fase = parte di sistema delimitata che presenta le stesse caratteristiche fisiche
-  omogeneo = unica fase
-  eterogeneo = due o piu' fasi
-Miscele:
-  - Omogenee = stesse proprietà, fasi non distinguibili. (Soluzioni)
-  - solvente = base, soluto = componente
-  - Eterogenee = 2+ componenti distinguibili con proprietà diverse
-Decantazione:
-  La gravita' causa l'accumularsi del componente con densita' maggiore
-  Lasciando il componente liquido separato
-Filtrazione:
-  Miscela = sospensione
-  componente solido = residuo
-  componente liquido = filtrato
-Centrifugazione:
-  Diversa densita', forza centrifuga, accumularsi >denso
-Cristall:
-  diversa solubilita'.
-  - dissoluzione,filtrazione,evaporazione
-Con Solvente:
-  Separazione due soluti da solvente
-  miscelazione con solvente miscelabile con un solo soluto
+Informatica:
+  L'informatica e' la scienza che studia l'elaborazione dell'informazione tramite procedure automatizzabili e ripetibili nel tempo
+Pens.Comput:
+  Il pensiero computazionale e' quel processo necessario per la formulazione e soluzione di problemi in forme comprensibili da agenti in grado di processare informazioni.
+  Sviluppa la concettualizzazione
+Coding:
+  Permette di tradurre in codici quello che e' il pensiero umano, rendendolo comprensibile da una macchina.
+  Procedimento rigoroso e non ambiguo per arrivare alla soluzione
+  - Automazione
+  - Simulazione
+  - Programmazione
+Problema:
+  Un problema e' un quesito che chiede di trovare uno o piu' elementi ignoti partendo dagli elementi noti da esso forniti
+  Una strategia risolutiva e' un insieme di passi da compiere per giungere alla soluzione di un problema.
+Prob.Solv:
+  Il problem solving indica l'insieme dei processi per analizzare e individuare un metodo opportuno che consente di risolvere situazioni problematiche.
+  Si basa sul concetto di divide et impera, la divisione in sottoproblemi.
