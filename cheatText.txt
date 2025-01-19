@@ -1,17 +1,6 @@
-Informatica:
-  L'informatica e' la scienza che studia l'elaborazione dell'informazione tramite procedure automatizzabili e ripetibili nel tempo
-Pens.Comput:
-  Il pensiero computazionale e' quel processo necessario per la formulazione e soluzione di problemi in forme comprensibili da agenti in grado di processare informazioni.
-  Sviluppa la concettualizzazione
-Coding:
-  Permette di tradurre in codici quello che e' il pensiero umano, rendendolo comprensibile da una macchina.
-  Procedimento rigoroso e non ambiguo per arrivare alla soluzione
-  - Automazione
-  - Simulazione
-  - Programmazione
-Problema:
-  Un problema e' un quesito che chiede di trovare uno o piu' elementi ignoti partendo dagli elementi noti da esso forniti
-  Una strategia risolutiva e' un insieme di passi da compiere per giungere alla soluzione di un problema.
-Prob.Solv:
-  Il problem solving indica l'insieme dei processi per analizzare e individuare un metodo opportuno che consente di risolvere situazioni problematiche.
-  Si basa sul concetto di divide et impera, la divisione in sottoproblemi.
+Tempio etrusco:
+  - Facciata con colonne con sopra timpano triangolare e cella, antefisse, acroteri, cornice e frontone, fragile
+Citta' romana:
+  - ordine e funzionalita', schema ippodameo, cardo/decumanus maximus
+  - porta preaetoria a nord, porta decumana a sud, porta dextera a est, porta sinistra a ovest
+  - Firenze, Aosta, Bologna, Torino
