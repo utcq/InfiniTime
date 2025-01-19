@@ -1,6 +1,6 @@
 Tempio etrusco:
   - Facciata con colonne con sopra timpano triangolare e cella, antefisse, acroteri, cornice e frontone, fragile
-Citta' romana:
+Citta romana:
   - ordine e funzionalita', schema ippodameo, cardo/decumanus maximus
   - porta preaetoria a nord, porta decumana a sud, porta dextera a est, porta sinistra a ovest
   - Firenze, Aosta, Bologna, Torino
