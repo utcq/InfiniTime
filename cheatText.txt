@@ -5,7 +5,7 @@ Citta romana:
   - porta preaetoria a nord, porta decumana a sud, porta dextera a est, porta sinistra a ovest
   - Firenze, Aosta, Bologna, Torino
 Via Lastr:
-  Agger trincea, stationes posta, mansiones locande, mutationes fermate cavalli
+  Agger trincea, statumen intermedio, nucleus di sabbia, lastre di selce, stationes posta, mansiones locande, mutationes fermate cavalli
   via Appia, flaminia, aurelia. Oltre 100kkm
 Ponti:
   Superv, pontifex maximus sacerdote, un solo arco centina di legno, più pilastri rostro appuntito
@@ -13,3 +13,5 @@ Acqd:
   >50m sifone inverso, piscina mirabilis riserva idrica, cloaca maxima fogna
 Opus:
   Siliceum, difesa a secco. Quadratum pietra e filari isodomi. Caementicium pietre artificiali cupole. Reticulatum tufo piramide
+Tmp. Etrusco:
+  facciata+colonne, timpano triangolare, cella chiusa. Simile tempio prostilo tetrastilo, podio in pietra come base
