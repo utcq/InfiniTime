@@ -1,41 +1,31 @@
 Domus:
-  OSTIUM: entrata, corridoio FAUCES
-  ATRIUM: cortile
-  COMPLUVIUM: raccolta
-  IMPLUVIUM
-  CUBICULA: stanze
-  TABLINUM: sala
-  PERISTILIUM: portico
-  HORTUS: giardino
-  CULINA, LATRINA
-  LARARIUM
-  CLINIUM: pranzo
-  INSULA: Condominio
+  OSTIUM: entrata principale della casa, porta che conduce al corridoio di accesso (FAUCES)
+  ATRIUM: cortile centrale della casa, spazio aperto dove si trova l'impluvium
+  COMPLUVIUM: apertura nel tetto dell'atrio per raccogliere l'acqua piovana
+  IMPLUVIUM: vasca sotto il compluvium per raccogliere l'acqua piovana
+  CUBICULA: stanze private della casa, generalmente utilizzate per dormire
+  TABLINUM: sala principale di lavoro o studio, situata di solito tra l'atrio e il peristilio
+  PERISTILIUM: giardino porticato, con colonne che circondano un'area centrale aperta
+  HORTUS: giardino all'interno della domus, spesso con piante ornamentali o ortaggi
+  CULINA: cucina della casa, spesso separata dalle aree di soggiorno
+  LATRINA: latrina o bagno, solitamente ubicato in una parte isolata della casa
+  LARARIUM: piccola cappella domestica per il culto degli dei protettori della casa
+  CLINIUM: area dedicata ai pasti, in particolare per il pranzo
+  INSULA: condominio romano, blocco di appartamenti situati in una struttura comune
+
 Pittura:
-  primo: Incrostazione.150-80,imitazione monumentale di una muratura
-  secondo: 80-0,strutture architettoniche,paesaggi
-  terzo: Ornamentale,15-50,effetto elegante
-  quarto: Barocco,prospettiva,ostentazione
-Ara Pacis:
-  celebrare Augusto,Campo Marzio,bassorilievi vegetali+cortei.Aurae velificantes,prosperita
-Circo Massimo:
-  dedicato alla corsa delle bighe/quadrighe. Pista con fondo di sabbia che gira attorno alla spina modo semicircolare, ingresso monumentale con perimetro di gradinate.
-Arco di Tito:
-  costruito nel Foro Romano, celebra le vittorie di Tito e Vespasiano nella guerra giudaica (70 d.C.). Monoforo con semicolonne architravate, lapide dedicatoria, rilievi interni raffigurano il trionfo di Tito e la distruzione del Tempio di Salomone. Scena della quadriga con Vittoria alata e soldati romani che trasportano il bottino, incluso il candelabro a sette bracci (Menorah), simbolo dell'Ebraismo.
-Colonna Traiana:
-  eretta nel Foro di Traiano (113 d.C.), celebra la conquista della Dacia. Alta 30 m, decorata con un fregio spiraliforme lungo 200 m con oltre 2500 figure che narrano le campagne militari di Traiano. Al suo interno una scala a chiocciola conduce alla sommità, dove originariamente era posta una statua di Traiano, poi sostituita con San Pietro.
-Pantheon:
-  costruito da Agrippa (27-25 a.C.) e ricostruito da Adriano (118-125 d.C.), tempio dedicato a tutte le divinità. Rotonda con diametro e altezza di 43,3 m, coperta da una cupola con oculus centrale di 9 m per illuminazione naturale. Interno con nicchie e marmi pregiati, espressione della perfezione geometrica romana.
-Terme di Diocleziano:
-  VESTIBULUM: ingresso monumentale
-  NATATIO: piscina scoperta per nuotare
-  FRIGIDARIUM: sala con acqua fredda
-  TEPIDARIUM: sala con acqua tiepida
-  CALDARIUM: sala con acqua calda
-  PALAESTRAE: cortili per esercizi fisici
-  APODYTERIUM: spogliatoi
-  LACONICUM: sauna per bagni di vapore
-  BIBLIOTHECA: biblioteca per la cultura
-  GIARDINI: spazi verdi e decorativi
+  Primo Stile (Incrostazione): Periodo 150-80 a.C. - imitazione monumentale di murature con pitture in rilievo
+  Secondo Stile: Periodo 80-0 a.C. - rappresentazione di strutture architettoniche e paesaggi attraverso la pittura
+  Terzo Stile: Periodo 15-50 d.C. - decorazioni ornamentali con motivi eleganti e raffinati, atmosfera delicata
+  Quarto Stile: Periodo Barocco (50 d.C. -) - pittura con prospettive complesse e ostentazione di ricchezza e potere
+
+Monumenti:
+  Ara Pacis: Monumento dedicato ad Augusto (Campo Marzio) - Bassorilievi vegetali e cortei, rappresentazione della prosperità e della pace portata dal regime di Augusto
+  Circo Massimo: Grande arena dedicata alle corse delle bighe e quadrighe - Pista in sabbia con spina semicircolare, ingresso monumentale, gradinate per il pubblico
+  Arco di Tito: Costruito nel Foro Romano (81 d.C.) - Celebra le vittorie di Tito e Vespasiano nella guerra giudaica, con rilievi che mostrano la distruzione del Tempio di Salomone e il trionfo su Gerusalemme
+  Colonna Traiana: Erecta nel Foro di Traiano (113 d.C.) - Monolito celebrativo per la conquista della Dacia, con fregio che narra in oltre 2500 figure le guerre di Traiano
+  Pantheon: Tempio dedicato a tutte le divinità, costruito da Agrippa (27-25 a.C.), riedificato da Adriano (118-125 d.C.) - Rotonda con cupola di 43,3 m di diametro, oculus centrale di 9 m, interni decorati con marmi pregiati
+  Terme di Diocleziano: Complesso termale imperiale (301 d.C.) - Includono il vestibolo (ingresso monumentale), natatio (piscina scoperta), frigidarium (sala di acqua fredda), tepidarium (sala di acqua tiepida), caldarium (sala di acqua calda), palestrae (aree per esercizi fisici), apodyterium (spogliatoi), laconicum (sauna), biblioteca e giardini decorativi
+
 Arco di Costantino:
-  costruito nel 315 d.C. per commemorare la vittoria di Costantino su Massenzio. Arco trionfale a tre fornici con rilievi presi da monumenti precedenti (spolia), simbolo della continuità imperiale. Scene di caccia e sacrifici agli dei, celebrazione della pace portata da Costantino. Stile composito, mix di arte classica e tardoantica.
+  Costruito nel 315 d.C. per celebrare la vittoria di Costantino su Massenzio - Arco trionfale a tre fornici con rilievi presi da monumenti precedenti (spolia), rappresentazioni di cacce, sacrifici e scene di pace, simbolo della continuità imperiale, con un mix di arte classica e tardoantica
