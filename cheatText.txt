@@ -1,13 +1,22 @@
-Retta da punti:
-  (y-y1)/(y2-y1) = (x-x1)/(x2-x1)
-Lunghezza segm:
-  sqrt((x2-x1)**2 + (y2-y1)**2)
-Dist. pnt retta:
-  in forma implicita
-  abs(ay*Py + bx*Px + c)/sqrt(a**2 + b**2)
-Coeff ang:
-  (y2-y1)/(x2-x1)
-Q1 e Q3 bis:
-  m = 1
-Fasci rette pro:
-  y - Py = m(x-Px)
+Domus:
+  OSTIUM: entrata, corridoio FAUCES
+  ATRIUM: cortile
+  COMPLUVIUM: raccolta
+  IMPLUVIUM
+  CUBICULA: stanze
+  TABLINUM: sala
+  PERISTILIUM: portico
+  HORTUS: giardino
+  CULINA, LATRINA
+  LARARIUM
+  CLINIUM: pranzo
+  INSULA: Condominio
+Pittura:
+  primo: Incrostazione.150-80,imitazione monumentale di una muratura
+  secondo: 80-0,strutture architettoniche,paesaggi
+  terzo: Ornamentale,15-50,effetto elegante
+  quarto: Barocco,prospettiva,ostentazione
+Ara Pacis:
+  celebrare Augusto,Campo Marzio,bassorilievi vegetali+cortei.Aurae velificantes,prosperita
+Circo Massimo:
+  dedicato alla corsa delle bighe/quadrighe. Pista con fondo di sabbia che gira attorno alla spina modo semicircolare, ingresso monumentale con perimetro di gradinate.
