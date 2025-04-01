@@ -20,3 +20,22 @@ Ara Pacis:
   celebrare Augusto,Campo Marzio,bassorilievi vegetali+cortei.Aurae velificantes,prosperita
 Circo Massimo:
   dedicato alla corsa delle bighe/quadrighe. Pista con fondo di sabbia che gira attorno alla spina modo semicircolare, ingresso monumentale con perimetro di gradinate.
+Arco di Tito:
+  costruito nel Foro Romano, celebra le vittorie di Tito e Vespasiano nella guerra giudaica (70 d.C.). Monoforo con semicolonne architravate, lapide dedicatoria, rilievi interni raffigurano il trionfo di Tito e la distruzione del Tempio di Salomone. Scena della quadriga con Vittoria alata e soldati romani che trasportano il bottino, incluso il candelabro a sette bracci (Menorah), simbolo dell'Ebraismo.
+Colonna Traiana:
+  eretta nel Foro di Traiano (113 d.C.), celebra la conquista della Dacia. Alta 30 m, decorata con un fregio spiraliforme lungo 200 m con oltre 2500 figure che narrano le campagne militari di Traiano. Al suo interno una scala a chiocciola conduce alla sommità, dove originariamente era posta una statua di Traiano, poi sostituita con San Pietro.
+Pantheon:
+  costruito da Agrippa (27-25 a.C.) e ricostruito da Adriano (118-125 d.C.), tempio dedicato a tutte le divinità. Rotonda con diametro e altezza di 43,3 m, coperta da una cupola con oculus centrale di 9 m per illuminazione naturale. Interno con nicchie e marmi pregiati, espressione della perfezione geometrica romana.
+Terme di Diocleziano:
+  VESTIBULUM: ingresso monumentale
+  NATATIO: piscina scoperta per nuotare
+  FRIGIDARIUM: sala con acqua fredda
+  TEPIDARIUM: sala con acqua tiepida
+  CALDARIUM: sala con acqua calda
+  PALAESTRAE: cortili per esercizi fisici
+  APODYTERIUM: spogliatoi
+  LACONICUM: sauna per bagni di vapore
+  BIBLIOTHECA: biblioteca per la cultura
+  GIARDINI: spazi verdi e decorativi
+Arco di Costantino:
+  costruito nel 315 d.C. per commemorare la vittoria di Costantino su Massenzio. Arco trionfale a tre fornici con rilievi presi da monumenti precedenti (spolia), simbolo della continuità imperiale. Scene di caccia e sacrifici agli dei, celebrazione della pace portata da Costantino. Stile composito, mix di arte classica e tardoantica.
