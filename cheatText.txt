@@ -1,31 +1,31 @@
 Domus:
-  OSTIUM: entrata principale della casa, porta che conduce al corridoio di accesso (FAUCES)
-  ATRIUM: cortile centrale della casa, spazio aperto dove si trova l'impluvium
-  COMPLUVIUM: apertura nel tetto dell'atrio per raccogliere l'acqua piovana
-  IMPLUVIUM: vasca sotto il compluvium per raccogliere l'acqua piovana
-  CUBICULA: stanze private della casa, generalmente utilizzate per dormire
-  TABLINUM: sala principale di lavoro o studio, situata di solito tra l'atrio e il peristilio
-  PERISTILIUM: giardino porticato, con colonne che circondano un'area centrale aperta
-  HORTUS: giardino all'interno della domus, spesso con piante ornamentali o ortaggi
-  CULINA: cucina della casa, spesso separata dalle aree di soggiorno
-  LATRINA: latrina o bagno, solitamente ubicato in una parte isolata della casa
-  LARARIUM: piccola cappella domestica per il culto degli dei protettori della casa
-  CLINIUM: area dedicata ai pasti, in particolare per il pranzo
-  INSULA: condominio romano, blocco di appartamenti situati in una struttura comune
+  OSTIUM: ingresso principale della domus, spesso suddiviso in due parti: vestibulum (anticamera) e fauces (corridoio d'accesso all'atrio).
+  ATRIUM: cortile centrale coperto della domus, cuore dell'abitazione, attorno al quale si sviluppano gli altri ambienti. Caratterizzato dal compluvium (apertura nel tetto) e dall'impluvium (vasca per raccogliere l'acqua piovana).
+  COMPLUVIUM: apertura nel tetto dell'atrio che permetteva l'ingresso di luce e aria, oltre alla raccolta dell'acqua piovana nell'impluvium.
+  IMPLUVIUM: vasca situata al centro dell'atrio, sotto il compluvium, utilizzata per raccogliere l'acqua piovana.
+  CUBICULA: stanze private, generalmente utilizzate come camere da letto, situate attorno all'atrio.
+  TABLINUM: sala multifunzionale adibita a studio o salotto, situata tra l'atrio e il peristilio, spesso utilizzata per ricevere ospiti importanti.
+  PERISTILIUM: giardino porticato circondato da colonne, situato sul lato opposto dell'atrio, spesso arricchito con piante ornamentali, statue e fontane.
+  HORTUS: giardino o orto situato nella parte posteriore della domus, utilizzato per coltivare piante da frutto, ortaggi o come spazio ricreativo.
+  CULINA: cucina, spesso separata dalle aree di soggiorno per motivi di sicurezza e igiene, dotata di focolare e attrezzature per la preparazione dei pasti.
+  LATRINA: bagno o gabinetto, situato in una zona appartata della domus, dotato di sedile in pietra o legno e sistema di drenaggio.
+  LARARIUM: nicchia o piccola cappella dedicata al culto dei Lari (spiriti protettori della famiglia), situata in un angolo dell'atrio o del peristilio.
+  TRICLINIUM: sala da pranzo, arredata con tre letti triclinari disposti attorno a un tavolo centrale, dove gli ospiti mangiavano sdraiati.
+  INSULA: condominio o blocco di appartamenti situati in edifici a più piani, abitato principalmente da classi meno abbienti.
 
 Pittura:
-  Primo Stile (Incrostazione): Periodo 150-80 a.C. - imitazione monumentale di murature con pitture in rilievo
-  Secondo Stile: Periodo 80-0 a.C. - rappresentazione di strutture architettoniche e paesaggi attraverso la pittura
-  Terzo Stile: Periodo 15-50 d.C. - decorazioni ornamentali con motivi eleganti e raffinati, atmosfera delicata
-  Quarto Stile: Periodo Barocco (50 d.C. -) - pittura con prospettive complesse e ostentazione di ricchezza e potere
+  Primo Stile (Incrostazione): Periodo 150-80 a.C. - imitazione di lastre di marmo pregiate attraverso l'uso di stucco colorato, creando l'illusione di pareti rivestite con materiali costosi.
+  Secondo Stile: Periodo 80-0 a.C. - rappresentazione di strutture architettoniche e paesaggi attraverso la pittura, creando l'illusione di spazi più ampi e profondi. Le pareti sembrano aprirsi su architetture immaginarie con colonne, podi e soffitti a cassettoni, ispirati alle scenografie teatrali. :contentReference[oaicite:0]{index=0}
+  Terzo Stile: Periodo 15-50 d.C. - decorazioni ornamentali con motivi eleganti e raffinati, caratterizzate da pannelli monocromatici con piccoli motivi decorativi e scene mitologiche, creando un effetto di leggerezza e delicatezza. :contentReference[oaicite:1]{index=1}
+  Quarto Stile: Periodo 50-79 d.C. - pittura con prospettive complesse e ostentazione di ricchezza e potere, combinando elementi dei precedenti stili in composizioni più elaborate e fantasiose. Caratterizzato da un mix di architetture immaginarie, scene mitologiche e paesaggi esotici, creando un effetto di illusione prospettica e profondità. :contentReference[oaicite:2]{index=2}
 
 Monumenti:
-  Ara Pacis: Monumento dedicato ad Augusto (Campo Marzio) - Bassorilievi vegetali e cortei, rappresentazione della prosperità e della pace portata dal regime di Augusto
-  Circo Massimo: Grande arena dedicata alle corse delle bighe e quadrighe - Pista in sabbia con spina semicircolare, ingresso monumentale, gradinate per il pubblico
-  Arco di Tito: Costruito nel Foro Romano (81 d.C.) - Celebra le vittorie di Tito e Vespasiano nella guerra giudaica, con rilievi che mostrano la distruzione del Tempio di Salomone e il trionfo su Gerusalemme
-  Colonna Traiana: Erecta nel Foro di Traiano (113 d.C.) - Monolito celebrativo per la conquista della Dacia, con fregio che narra in oltre 2500 figure le guerre di Traiano
-  Pantheon: Tempio dedicato a tutte le divinità, costruito da Agrippa (27-25 a.C.), riedificato da Adriano (118-125 d.C.) - Rotonda con cupola di 43,3 m di diametro, oculus centrale di 9 m, interni decorati con marmi pregiati
-  Terme di Diocleziano: Complesso termale imperiale (301 d.C.) - Includono il vestibolo (ingresso monumentale), natatio (piscina scoperta), frigidarium (sala di acqua fredda), tepidarium (sala di acqua tiepida), caldarium (sala di acqua calda), palestrae (aree per esercizi fisici), apodyterium (spogliatoi), laconicum (sauna), biblioteca e giardini decorativi
-
-Arco di Costantino:
-  Costruito nel 315 d.C. per celebrare la vittoria di Costantino su Massenzio - Arco trionfale a tre fornici con rilievi presi da monumenti precedenti (spolia), rappresentazioni di cacce, sacrifici e scene di pace, simbolo della continuità imperiale, con un mix di arte classica e tardoantica
+  Ara Pacis: Monumento dedicato ad Augusto, situato nel Campo Marzio. Caratterizzato da bassorilievi che rappresentano scene di cortei processionali e elementi vegetali, simboleggianti la prosperità e la pace portate dall'Imperatore. :contentReference[oaicite:3]{index=3}
+  Circo Massimo: Grande arena dedicata alle corse delle bighe e quadrighe. La pista in sabbia era circondata da una spina semicircolare e da gradinate che potevano ospitare decine di migliaia di spettatori. L'ingresso monumentale era sormontato da un arco trionfale.
+  Arco di Tito: Costruito nel Foro Romano per celebrare le vittorie di Tito e Vespasiano nella guerra giudaica (70 d.C.). Caratterizzato da un monoforo con semicolonne architravate e rilievi interni che raffigurano il trionfo di Tito e la distruzione del Tempio di Gerusalemme, inclusa la rappresentazione del candelabro a sette bracci (Menorah), simbolo dell'Ebraismo.
+  Colonna Traiana: Erecta nel Foro di Traiano per celebrare la conquista della Dacia (101-106 d.C.). Alta 30 metri, presenta un fregio spiraliforme lungo 200 metri con oltre 2500 figure che narrano le campagne militari di Traiano. Al suo interno, una scala a chiocciola conduceva alla sommità, dove originariamente era posta una statua di Traiano, poi sostituita con quella di San Pietro.
+  Pantheon: Tempio dedicato a tutte le divinità, costruito da Agrippa (27-25 a.C.) e successivamente ricostruito da Adriano (118-125 d.C.). La rotonda centrale, con un diametro e un'altezza di 43,3 metri, è coperta da una cupola con oculus centrale di 9 metri, che fornisce illuminazione naturale all'interno. Gli interni sono decorati con nicchie e marmi pregiati, esemplificando la perfezione geometrica romana.
+  Terme di Diocleziano: Complesso termale imperiale che comprendeva vari ambienti: il vestibolo (ingresso monumentale), la natatio (piscina scoperta), il frigidarium (sala con acqua fredda), il tepidarium (sala con acqua tiepida), il caldarium (sala con acqua calda), la palestra (area per esercizi fisici), l'apodyterium (spogliatoio), il laconicum (sauna per bagni di vapore), la bibliotheca (biblioteca) e i giardini (spazi verdi e decorativi).
+  Arco di Costantino: Costruito nel 315 d.C.
+::contentReference[oaicite:4]{index=4}
+ 
